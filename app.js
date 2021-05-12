@@ -48,7 +48,7 @@ app.put('/data', (req, res) => {
     client.connect((err, connectedClient) => {
         if (err) return res.status(500).json({message: err})
         const db = connectedClient.db("mydata")
-        db.collection("data").updateOne({$set: {name: "Noah"}}), ((err, result) => {
+        db.collection("data").updateOne({name: "Adewale"}, {$set: {name: "Noah"}}), ((err, result) => {
             if (err) {
                 return res.status(500).json({message: err})
             }
